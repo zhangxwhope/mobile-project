@@ -1,5 +1,5 @@
 import userApi from '@/api/user';
-// import cache from '@/lib/cache;
+import cache from '@/lib/cache';
 
 // state
 const state = {
@@ -17,6 +17,7 @@ const actions = {
     async userGet(context) {
         const res = await userApi.getUser();
         context.commit('userUpdate', res);
+        cache.set('userInfo', res.data);
         return res;
     },
 };

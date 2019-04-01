@@ -23,11 +23,12 @@ const Routers = new Router({
 Routers.beforeEach((to, from, next) => {
     const user = cache.get('userInfo');
     // console.log(user, 'user');
-    if (user && user.id) {
-        next();
-    } else {
-        return Promise.reject('用户信息不存在');
-    }
+    next();
+    // if (user && user.id) {
+    //     next();
+    // } else {
+    //     return Promise.reject('用户信息不存在');
+    // }
 });
 
 export default Routers;
