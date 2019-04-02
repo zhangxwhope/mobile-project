@@ -2,7 +2,7 @@
     <div class="mod-header">
         <grid>
             <grid-item show-lr-borders="false">
-                <com-search></com-search>
+                <com-search :value.sync="value"></com-search>
             </grid-item>
         </grid>
     </div>
@@ -18,7 +18,9 @@ export default {
         ComSearch,
     },
     data() {
-        return {};
+        return {
+            value: 'aaa',
+        };
     },
     computed: {
         ...mapState({

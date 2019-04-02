@@ -46,6 +46,16 @@ export default {
         ComSwiper,
         ComTab,
     },
+    data() {
+        return {
+            value: 'bbb',
+        };
+    },
+    provide() {
+        return {
+            form: 'abc',
+        };
+    },
     computed: {
         ...mapState({
             list: state => state.home.list,
@@ -57,6 +67,11 @@ export default {
         this.getSwiper();
         this.getNav();
         this.getProducts();
+    },
+    mounted() {
+        this.$EventBus.$on('change', val => {
+            this.value = val;
+        });
     },
     methods: {
         ...mapActions({

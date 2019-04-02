@@ -13,8 +13,9 @@ const Routers = new Router({
             component: resolve => require.ensure([], () => resolve(require('@/pages/home/index')), 'home'),
         },
         {
-            path: '/hello',
+            path: '/hello/:id',
             name: 'Hello',
+            props: true,
             component: resolve => require.ensure([], () => resolve(require('@/components/HelloWorld')), 'HelloWorld'),
         },
     ],

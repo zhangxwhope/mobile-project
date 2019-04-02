@@ -5,6 +5,7 @@ import App from './App';
 import router from './router';
 import store from './store';
 import './assets/iconfont/iconfont.css';
+import './assets/scss/vars.scss';
 import { Divider, Grid, GridItem, Search, Swiper, AlertPlugin, Flexbox, FlexboxItem, Tab, TabItem } from 'vux';
 
 Vue.component('divider', Divider);
@@ -18,6 +19,8 @@ Vue.component('tab', Tab);
 Vue.component('tab-item', TabItem);
 
 Vue.use(AlertPlugin);
+
+Vue.prototype.$EventBus = new Vue();
 
 require('./mock');
 
